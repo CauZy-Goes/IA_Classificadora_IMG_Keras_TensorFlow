@@ -1,6 +1,6 @@
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping  # Importa os callbacks para monitoramento do treinamento
 
-def treinar_modelo(model, train_gen, val_gen, epochs=6):
+def treinar_modelo(model, train_gen, val_gen, epochs=10):
     """
     Treina o modelo e implementa estratégias para salvar o melhor modelo e prevenir overfitting.
 

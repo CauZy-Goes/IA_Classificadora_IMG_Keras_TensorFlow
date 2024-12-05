@@ -3,7 +3,8 @@ from modelo import criar_modelo  # Importa a função para criar a arquitetura d
 from treinamento import treinar_modelo  # Importa a função responsável por treinar o modelo
 from avaliacao import avaliar_modelo, plotar_historico  # Importa as funções para avaliar o modelo e gerar gráficos de desempenho
 
-# Caminhos do dataset
+
+# Caminhos do dataset dividido
 # Define os caminhos das pastas onde estão os dados de treinamento, validação e teste
 train_dir = "C:\\Users\\cauac\\dev\\Faculdade\\IA\\IA_Classificadora_IMG_Keras_TensorFlow\\dataset\\train"
 val_dir = "C:\\Users\\cauac\\dev\\Faculdade\\IA\\IA_Classificadora_IMG_Keras_TensorFlow\\dataset\\val"
