@@ -1,6 +1,6 @@
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping  # Importa os callbacks para monitoramento do treinamento
 
-def treinar_modelo(model, train_gen, val_gen, epochs=10):
+def treinar_modelo(model, train_gen, val_gen, epochs=15):
     """
     Treina o modelo e implementa estratégias para salvar o melhor modelo e prevenir overfitting.
 
@@ -25,7 +25,7 @@ def treinar_modelo(model, train_gen, val_gen, epochs=10):
         # - Interrompe o treinamento antecipadamente se o desempenho no conjunto de validação (val_loss) parar de melhorar.
         # - O parâmetro 'patience=5' significa que o treinamento será interrompido após 5 épocas sem melhora no val_loss.
         # - 'restore_best_weights=True' garante que o modelo final usará os pesos da melhor época.
-        EarlyStopping(patience=2, monitor='val_loss', restore_best_weights=True)
+        EarlyStopping(patience=3, monitor='val_loss', restore_best_weights=True)
     ]
 
     # Treinamento do modelo:
