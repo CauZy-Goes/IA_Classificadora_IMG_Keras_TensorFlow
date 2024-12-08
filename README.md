@@ -78,5 +78,26 @@ pip install -r requirements.txt
 python main.py
 ```
 
+## Possível erro apos o uso do comando "pip install -r requirements.txt" : Caminho de arquivo longo, ocorre no windows 
+Esse erro ocorre porque o caminho do arquivo é muito longo para o Windows processar, o que é uma limitação do sistema de arquivos do Windows.
+
+### Possivel sugestão: habilitar o suporte a caminhos longos no Windows.
+
+1. Pressione Win + R para abrir o comando Executar.
+2. Digite gpedit.msc e pressione Enter para abrir o Editor de Políticas de Grupo Local.
+3. Navegue até a seguinte pasta: Configuração do Computador > Modelos Administrativos > Sistema > Sistema de arquivos.
+4. No painel direito, localize a política "Ativar suporte a caminhos de arquivos Win32 longos".
+5. Clique com o botão direito sobre essa política e selecione Editar.
+6. Na janela de configuração, selecione Ativado e depois clique em OK.
+7. Tente executar novamente o :
+```bash
+pip install -r requirements.txt
+```
+
+Se você utilizar outro Sistema operacional pode ficar despreucupado pois o caminho máximo para eles são de 4096 caractéres enquanto do windows são de apenas 260.
+
+
+
+
 
 
