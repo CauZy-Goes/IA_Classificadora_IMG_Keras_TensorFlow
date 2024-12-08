@@ -6,9 +6,9 @@ from avaliacao import avaliar_modelo, plotar_historico  # Importa as funções p
 
 # Caminhos do dataset dividido
 # Define os caminhos das pastas onde estão os dados de treinamento, validação e teste
-train_dir = "C:\\Users\\cauac\\dev\\Faculdade\\IA\\IA_Classificadora_IMG_Keras_TensorFlow\\dataset\\train"
-val_dir = "C:\\Users\\cauac\\dev\\Faculdade\\IA\\IA_Classificadora_IMG_Keras_TensorFlow\\dataset\\val"
-test_dir = "C:\\Users\\cauac\\dev\\Faculdade\\IA\\IA_Classificadora_IMG_Keras_TensorFlow\\dataset\\test"
+train_dir = "dataset\\train"
+val_dir = "dataset\\val"
+test_dir = "dataset\\test"
 
 # Passo 1: Carregar os dados
 # Chama a função para carregar e pré-processar os dados das pastas de treinamento, validação e teste.
