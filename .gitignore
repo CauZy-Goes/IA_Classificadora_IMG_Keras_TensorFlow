@@ -1,0 +1,30 @@
+# Ignorar diretórios e arquivos do ambiente virtual
+venv/
+.env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Ignorar arquivos de configuração do sistema
+*.log
+*.bak
+*.swp
+
+# Ignorar arquivos do sistema de controle de versão de IDEs (exemplo: PyCharm, VSCode, etc.)
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Ignorar arquivos gerados durante a instalação do pacote
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Ignorar arquivos temporários criados por editores de texto
+*~
