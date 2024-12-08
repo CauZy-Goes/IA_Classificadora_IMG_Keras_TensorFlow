@@ -38,10 +38,45 @@ Antes de executar o projeto, certifique-se de ter o Python instalado na sua máq
 
 ```bash
 python --version
+```
 
 ## Passo a Passo de como executar
 
+1. Clone o repositorio
+   
+```bash
+git clone https://github.com/CauZy-Goes/IA_Classificadora_IMG_Keras_TensorFlow.git
+```
 
+2. Com o terminal na pasta do projeto, inicialize o ambiente virtual python
+   
+```bash
+python -m venv <nome_do_ambiente>
+```
+
+3. ative o ambiente virtual python
+
+Windows 
+```bash
+venv\Scripts\activate
+```
+
+Mac
+```bash
+source venv/bin/activate
+```
+
+4. Instale as depencias do projeto usando o requirements.txt
+   
+```bash
+pip install -r requirements.txt
+```
+
+5. Execute o projeto
+   
+```bash
+python main.py
+```
 
 
 
