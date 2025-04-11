@@ -4,13 +4,13 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
 class DetectorDePneumonia:
-    def __init__(self, caminho_modelo='best_model.keras', tamanho_img=(150, 150)):
+    def __init__(self, caminho_modelo='best_model.keras', tamanho_img=(224, 224)):
         """
         Inicializa o detector de pneumonia carregando o modelo treinado.
 
         Parâmetros:
         - caminho_modelo: Caminho para o arquivo do modelo salvo (.keras).
-        - tamanho_img: Tamanho esperado das imagens (default = (150, 150)).
+        - tamanho_img: Tamanho esperado das imagens (default = (224, 224)).
         """
         self.modelo = load_model(caminho_modelo)
         self.tamanho_img = tamanho_img
@@ -47,7 +47,6 @@ class DetectorDePneumonia:
         print(f"{os.path.basename(caminho_imagem)}: {classe} (confiança: {confianca:.2f})")
         return classe, confianca
 
-
     def diagnosticar_pasta(self, pasta_imgs):
         """
         Diagnostica todas as imagens dentro de uma pasta, indicando se é NORMAL ou PNEUMONIA.
@@ -61,6 +60,5 @@ class DetectorDePneumonia:
                 imagem_processada = self._preprocessar_imagem(caminho)
                 pred = self.modelo.predict(imagem_processada)[0][0]
                 classe = "PNEUMONIA" if pred > 0.5 else "NORMAL"
-                print(f"{nome_arquivo}: {classe} (confiança: {pred:.2f})")
-
-        
+                confianca = pred if pred > 0.5 else 1 - pred
+                print(f"{nome_arquivo}: {classe} (confiança: {confianca:.2f})")
