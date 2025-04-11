@@ -8,6 +8,8 @@ __pycache__/
 *.db
 *.sqlite3
 
+*.keras
+
 # Ignorar arquivos de configuração do sistema
 *.log
 *.bak

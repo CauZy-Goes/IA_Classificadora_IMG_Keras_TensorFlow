@@ -4,7 +4,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
 class DetectorDePneumonia:
-    def __init__(self, caminho_modelo='best_model.keras', tamanho_img=(224, 224)):
+    def __init__(self, caminho_modelo, tamanho_img=(224, 224)):
         """
         Inicializa o detector de pneumonia carregando o modelo treinado.
 

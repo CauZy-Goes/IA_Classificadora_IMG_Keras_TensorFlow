@@ -1,21 +1,37 @@
 import os
 import pneumo_finder as pf
-# from tensorflow.keras.models import load_model
 
-# Define o caminho do modelo com base na localização real do script
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Pega o caminho da pasta 'usar_modelo'
+# Caminhos base
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CAMINHO_MODELO = os.path.join(BASE_DIR, "..", "best_model.keras")
+CAMINHO_IMGS = os.path.join(BASE_DIR, "imgs")
 
-# # Carrega o modelo com segurança
-# modelo = load_model("best_model.keras")
-# modelo.summary()
-
+# Inicializa detector
 detector = pf.DetectorDePneumonia(CAMINHO_MODELO)
 
-# detector.diagnosticar_imagem(os.path.join(BASE_DIR, "imgs", "1_normal1.jpeg"))
-# detector.diagnosticar_imagem(os.path.join(BASE_DIR, "imgs", "3_pneumonia1.jpeg"))
-# detector.diagnosticar_imagem(os.path.join(BASE_DIR, "imgs", "2_normal2.jpeg"))
-detector.diagnosticar_imagem(os.path.join(BASE_DIR, "imgs", "4_pneumonia2.jpeg"))
-# detector.diagnosticar_imagem(os.path.join(BASE_DIR, "imgs", "6_normal3.jpeg"))
+def menu():
+    while True:
+        print("\n=== MENU ===")
+        print("1. Diagnosticar uma imagem")
+        print("2. Diagnosticar todas as imagens da pasta 'imgs/'")
+        print("0. Sair")
 
-# detector.diagnosticar_pasta(os.path.join(BASE_DIR, "imgs"))
+        escolha = input("Escolha uma opção: ")
+
+        if escolha == "1":
+            nome_img = input("Digite o nome da imagem (ex: 1_normal1.jpeg): ")
+            caminho_img = os.path.join(CAMINHO_IMGS, nome_img)
+            if os.path.exists(caminho_img):
+                detector.diagnosticar_imagem(caminho_img)
+            else:
+                print("❌ Imagem não encontrada.")
+        elif escolha == "2":
+            detector.diagnosticar_pasta(CAMINHO_IMGS)
+        elif escolha == "0":
+            print("Saindo...")
+            break
+        else:
+            print("Opção inválida. Tente novamente.")
+
+if __name__ == "__main__":
+    menu()
