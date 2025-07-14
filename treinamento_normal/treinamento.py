@@ -19,7 +19,7 @@ def treinar_modelo(model, train_gen, val_gen, epochs=15):
         # - Salva o modelo apenas quando sua acurácia na validação (val_accuracy) atinge um novo melhor valor.
         # - O arquivo 'best_model.keras' conterá o melhor modelo encontrado durante o treinamento.
         # = mode = max, novo valor maximo
-        ModelCheckpoint('best_model.keras', save_best_only=True, monitor='val_accuracy', mode='max'),
+        ModelCheckpoint('normal_model.keras', save_best_only=True, monitor='val_accuracy', mode='max'),
 
         # EarlyStopping:
         # - Interrompe o treinamento antecipadamente se o desempenho no conjunto de validação (val_loss) parar de melhorar.
