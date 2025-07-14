@@ -1,5 +1,6 @@
 # Ignorar diretórios e arquivos do ambiente virtual
 venv/
+dataset/
 .env/
 __pycache__/
 *.pyc
@@ -8,7 +9,7 @@ __pycache__/
 *.db
 *.sqlite3
 
-best_model.keras
+*.keras
 
 # Ignorar arquivos de configuração do sistema
 *.log
