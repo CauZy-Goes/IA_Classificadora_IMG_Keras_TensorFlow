@@ -23,12 +23,12 @@ def avaliar_modelo(model, test_gen):
     # Relatório de Classificação:
     # - Gera métricas como precisão (precision), recall, F1-score e suporte para cada classe.
     # - 'target_names' atribui nomes às classes.
-    print(classification_report(y_true, y_pred, target_names=['NORMAL', 'PNEUMONIA']))
+    print(classification_report(y_true, y_pred, target_names=['Não é Pulmão', 'Pulmão']))
 
     # Matriz de Confusão:
     # - Mostra a relação entre as predições do modelo e os valores reais.
     cm = confusion_matrix(y_true, y_pred)  # Calcula a matriz de confusão
-    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=['NORMAL', 'PNEUMONIA'])
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=['Não é Pulmão', 'Pulmão'])
     disp.plot(cmap=plt.cm.Blues)  # Exibe a matriz com um mapa de cor azul para melhor visualização
     plt.show()  # Mostra a matriz de confusão plotada
 

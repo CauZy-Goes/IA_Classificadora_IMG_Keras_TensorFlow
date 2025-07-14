@@ -5,9 +5,9 @@ from PIL import Image
 import numpy as np
 
 # CONFIGURAÇÕES
-QUANTIDADE = 120                      # Quantas imagens salvar
-DESTINO = "dataset/test/NAO_PULMAO"  # Pasta de destino
-START_INDEX = QUANTIDADE                   # A partir de qual imagem do CIFAR começar
+QUANTIDADE = 1400               #1400       # Quantas imagens salvar
+DESTINO = "dataset/train/NAO_PULMAO"  # Pasta de destino
+START_INDEX = 1400                  # A partir de qual imagem do CIFAR começar
 
 os.makedirs(DESTINO, exist_ok=True)
 

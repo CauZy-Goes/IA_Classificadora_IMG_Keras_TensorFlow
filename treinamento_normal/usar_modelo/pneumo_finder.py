@@ -59,6 +59,6 @@ class DetectorDePneumonia:
             if os.path.isfile(caminho):
                 imagem_processada = self._preprocessar_imagem(caminho)
                 pred = self.modelo.predict(imagem_processada)[0][0]
-                classe = "PNEUMONIA" if pred > 0.5 else "NORMAL"
+                classe = "PULMÃO" if pred > 0.5 else "NÃO PULMÃO"
                 confianca = pred if pred > 0.5 else 1 - pred
                 print(f"{nome_arquivo}: {classe} (confiança: {confianca:.2f})")
